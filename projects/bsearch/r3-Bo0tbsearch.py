@@ -88,3 +88,44 @@ def BinarySearch(MyList,Target):
             return mid
     return "Number Not Found"
 print BinarySearch(MyList,Target)
+
+# Hallie 'Teh Awesome' Lomax
+
+list = ['aardvark', 'ball', 'banana', 'boat', 'cat', 'dog', 'eat', 'fried', 'guts']
+
+
+def bsearch(list, b):
+	i = 0 
+	search = []
+	while i < len(list):
+		search.append(i)
+		i+=1
+	if not list:
+		return -1
+	while (not search is False):
+		i = len(search) - 1
+		if list[search[0]] == b:
+			return search[0]
+		elif list[search[i]] < b or b < list[search[0]]:
+			return -1
+		elif list[search[i]] == b:
+			return search[i]
+		else:
+			i /= 2
+			if (i == 0):
+				if list[search[i]] == b:
+					return search[0]
+				else:
+					return -1
+			elif list[search[i]] == b:
+				return search[i]
+				
+			else:
+				if b > list[search[i]]:
+					search = search[i+1:]
+				else:
+					search = search[:i+1]
+	else:
+		return -1
+
+print bsearch(list,'dog')
